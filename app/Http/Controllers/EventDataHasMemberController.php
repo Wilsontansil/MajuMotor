@@ -45,6 +45,7 @@ class EventDataHasMemberController extends Controller
         $eventHasMember = EventDataHasMember::where('member_id', $member_id)->where('event_id', $event_id)->first();
         $eventHasMember->status = $request->statusedit;
         $eventHasMember->payment_date = $request->payment_date;
+        $eventHasMember->nominal = $request->nominal_pay;
         $eventHasMember->save();
         alert()->success('Member status updated successfully', 'Success');
         return redirect()->route('event.detail', ['id' => $event_id]);

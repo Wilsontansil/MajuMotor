@@ -44,6 +44,13 @@
         
                                 <input type="date" name="payment_date" id="payment_date" class="form-control" placeholder="Payment Date" value="{{ $eventHasMember['payment_date'] }}">
                             </div>
+
+                            <div class="mt-4">
+                                <label for="nominal_pay" class="block">Nominal</label>
+        
+                                <input type="text" name="nominal_pay" id="nominal_pay" class="form-control" placeholder="Nominal" value="{{ $eventHasMember['nominal'] }}">
+                            </div>
+
                         <div class="modal-footer">
                             <div class="flex items-center justify-end mt-4">
                                 <button type="submit" class="btn btn-primary">Save</button>

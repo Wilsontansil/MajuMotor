@@ -23,6 +23,9 @@ class EventDataDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
+            ->editColumn('event_nominal', function ($data) {
+                return 'Rp. ' . number_format($data->event_nominal, 0, ',', '.');
+            })
             ->addColumn('action', function ($data) {
                 $html = '<a href="' . route('event.detail', ['id' => $data->id]) . '" class="btn btn-sm btn-primary">Detail</a>';
                 return $html;
@@ -70,6 +73,7 @@ class EventDataDataTable extends DataTable
             Column::make('event_date'),
             Column::make('event_time_start'),
             Column::make('event_time_end'),
+            Column::make('event_nominal'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

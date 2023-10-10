@@ -50,6 +50,16 @@ class EventDataHasMemberDataTable extends DataTable
                     return $data->payment_date;
                 }
             })
+            ->editColumn('nominal', function ($data) use ($auth) {
+                if(!$auth->hasPermissionTo('View Detail Event')){
+                    return '-';
+                }
+                if ($data->nominal == null) {
+                    return '-';
+                } else {
+                    return 'Rp. ' . number_format($data->nominal, 0, ',', '.');
+                }
+            })
             ->addColumn('action', function ($data) use ($auth) {
                 if(!$auth->hasPermissionTo('Edit Event')){
                     return '-';
@@ -96,6 +106,7 @@ class EventDataHasMemberDataTable extends DataTable
     {
         return [
             Column::make('member_id')->title('Member Name'),
+            Column::make('nominal'),
             Column::make('status'),
             Column::make('payment_date'),
             Column::computed('action')

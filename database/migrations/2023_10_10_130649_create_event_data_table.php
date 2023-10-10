@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date("event_date")->nullable();
             $table->string("event_time_start")->nullable();
             $table->string("event_time_end")->nullable();
-            $table->decimal("nominal", $precision = 14, $scale = 3)->nullable();
+            $table->decimal("event_nominal", $precision = 14, $scale = 3)->nullable();
             $table->text("event_description")->nullable();
             $table->timestamps();
         });

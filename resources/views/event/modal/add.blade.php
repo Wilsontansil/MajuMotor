@@ -44,6 +44,12 @@
 
                         <textarea name="event_description" id="event_description" class="form-control" placeholder="Event Description" required></textarea>
                     </div>
+
+                    <div class="mt-4">
+                        <label for="event_nominal" class="block">Event Nominal</label>
+
+                        <input type="text" name="event_nominal" id="event_nominal" class="form-control" placeholder="Event Nominal" required>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="flex items-center justify-end mt-4">
