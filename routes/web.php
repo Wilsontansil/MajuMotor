@@ -19,7 +19,6 @@ Route::middleware(['auth'])->group(function () {
         return redirect('/dashboard');
     })->name('home');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-
 });
 
 require __DIR__.'/auth.php';
