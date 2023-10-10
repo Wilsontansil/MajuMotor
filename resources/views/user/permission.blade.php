@@ -68,6 +68,73 @@
                                                 </td>
                                             </tr>
 
+                                            <tr>
+                                                <td>Member Management</td>
+                                                <td class="text-right">
+                                                    <button type="button" class="btn btn-sm btn-dark" onClick="selectAll('member')">Select All</button>
+                                                </td>
+                                                <td>
+                                                    <div class="form-check"> 
+                                                        <input class="form-check-input member" type="checkbox" id="view-member"
+                                                        name="permission[]" value="View Member" @isset($permissions) {{ $permissions['View Member'] }} @endisset>
+                                                        <label class="form-check-label" for="view-member">
+                                                        View Member
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input member" type="checkbox" id="add-member"
+                                                        name="permission[]" value="Add Member" @isset($permissions) {{ $permissions['Add Member'] }} @endisset>
+                                                        <label class="form-check-label" for="add-member">
+                                                        Add Member
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input member" type="checkbox" id="edit-member"
+                                                        name="permission[]" value="Edit Member" @isset($permissions) {{ $permissions['Edit Member'] }} @endisset>
+                                                        <label class="form-check-label" for="edit-member">
+                                                        Edit Member
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Event Management</td>
+                                                <td class="text-right">
+                                                    <button type="button" class="btn btn-sm btn-dark" onClick="selectAll('event')">Select All</button>
+                                                </td>
+                                                <td>
+                                                    <div class="form-check"> 
+                                                        <input class="form-check-input event" type="checkbox" id="view-event"
+                                                        name="permission[]" value="View Event" @isset($permissions) {{ $permissions['View Event'] }} @endisset>
+                                                        <label class="form-check-label" for="view-event">
+                                                        View Event
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check"> 
+                                                        <input class="form-check-input event" type="checkbox" id="view-detail-event"
+                                                        name="permission[]" value="View Detail Event" @isset($permissions) {{ $permissions['View Detail Event'] }} @endisset>
+                                                        <label class="form-check-label" for="view-detail-event">
+                                                        View Detail Event
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input event" type="checkbox" id="add-event"
+                                                        name="permission[]" value="Add Event" @isset($permissions) {{ $permissions['Add Event'] }} @endisset>
+                                                        <label class="form-check-label" for="add-event">
+                                                        Add Event
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input event" type="checkbox" id="edit-event"
+                                                        name="permission[]" value="Edit Event" @isset($permissions) {{ $permissions['Edit Event'] }} @endisset>
+                                                        <label class="form-check-label" for="edit-event">
+                                                        Edit Event
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
                                         </tbody>
                                         </table>
                                     </div>

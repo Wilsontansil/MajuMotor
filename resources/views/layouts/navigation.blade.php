@@ -12,6 +12,7 @@
     @endif
 </li>
 
+@can('View Member')
 <li class="nav-item">
     @if($page=='member')
     <a href="{{ route('member') }}" class="nav-link active">
@@ -25,7 +26,9 @@
     </a>
     @endif
 </li>
+@endcan
 
+@can('View Event')
 <li class="nav-item">
     @if($page=='event')
     <a href="{{ route('event') }}" class="nav-link active">
@@ -39,6 +42,7 @@
     </a>
     @endif
 </li>
+@endcan
 
 @can('View User')
 <li class="nav-item">

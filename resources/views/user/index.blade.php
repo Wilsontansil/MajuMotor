@@ -24,7 +24,9 @@
             <div class="content-dt">
                 <div class="pt-3 pl-4">
                     <div class="row">
-                        <button class="btn btn-primary" onclick="addUser()">Add User</button>
+                        @can('Add User')
+                            <button class="btn btn-primary" onclick="addUser()">Add User</button>
+                        @endcan
                     </div>
                 </div>
                 <div class="w-max">

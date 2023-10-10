@@ -24,7 +24,9 @@
             <div class="content-dt">
                 <div class="pt-3 pl-4">
                     <div class="row">
-                        <button class="btn btn-primary" onclick="addEvent()">Add Event</button>
+                        @can('Add Event')
+                            <button class="btn btn-primary" onclick="addEvent()">Add Event</button>
+                        @endcan
                     </div>
                 </div>
                 <div class="w-max">

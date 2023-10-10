@@ -19,6 +19,15 @@ class PermissionSeeder extends Seeder
         static::CreatePermission('View User');
         static::CreatePermission('Edit User');
         static::CreatePermission('Add User');
+
+        static::CreatePermission('View Member');
+        static::CreatePermission('Edit Member');
+        static::CreatePermission('Add Member');
+
+        static::CreatePermission('View Event');
+        static::CreatePermission('View Detail Event');
+        static::CreatePermission('Edit Event');
+        static::CreatePermission('Add Event');
     }
 
     protected static function CreatePermission(string $name)

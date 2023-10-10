@@ -12,6 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 use App\Models\Member;
+use Illuminate\Support\Facades\Auth;
 
 class EventDataHasMemberDataTable extends DataTable
 {
@@ -22,28 +23,39 @@ class EventDataHasMemberDataTable extends DataTable
      * @return \Yajra\DataTables\EloquentDataTable
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
-    {
+    {   
+        $auth = Auth::user();
         return (new EloquentDataTable($query))
             ->editColumn('member_id', function ($data) {
                 $member = Member::find($data->member_id);
                 return $member->username;
             })
-            ->editColumn('status', function ($data) {
+            ->editColumn('status', function ($data) use ($auth) {
+                if(!$auth->hasPermissionTo('View Detail Event')){
+                    return '-';
+                }
                 if ($data->status == 'waiting') {
                     return 'Belum Bayar';
                 } else {
                     return 'Sudah Bayar';
                 }
             })
-            ->editColumn('payment_date', function ($data) {
+            ->editColumn('payment_date', function ($data) use ($auth) {
+                if(!$auth->hasPermissionTo('View Detail Event')){
+                    return '-';
+                }
                 if ($data->payment_date == null) {
                     return '-';
                 } else {
                     return $data->payment_date;
                 }
             })
-            ->addColumn('action', function ($data) {
-                return '';
+            ->addColumn('action', function ($data) use ($auth) {
+                if(!$auth->hasPermissionTo('Edit Event')){
+                    return '-';
+                }
+                $html = '<a href="' . route('event.detail.member', ['member_id' => $data->member_id, 'event_id' => $data->event_id]) . '" class="btn btn-sm btn-primary">Edit</a>';
+                return $html;
             })
             ->rawColumns(['action']);
     }

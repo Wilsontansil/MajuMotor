@@ -5,13 +5,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0">Detail</h1>
+            <h1 class="m-0">Event</h1>
             </div>
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('event') }}">Event</a></li>
-                <li class="breadcrumb-item active">Detail</li>
+                <li class="breadcrumb-item active">Event</li>
             </ol>
             </div>
         </div>
@@ -24,32 +23,39 @@
         <div class="col-md-12">
             <div class="content-dt">
                 <div class="pt-3 pl-4">
-                    <div class="row">
-                        @can('Edit Event')
-                            <button class="btn btn-primary" onclick="addMember()">Add Member</button>
-                        @endcan
-                    </div>
                 </div>
                 <div class="w-max">
-                    {{$dataTable->table(['class'=>'table-auto dt-table'])}}
+                    <form action="{{ route('event.detail.member.post') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="event_id" id="event_id" value="{{ $event_id }}" >
+                        <input type="hidden" name="member_id" id="member_id" value="{{ $member_id }}" >
+                        <div class="modal-body" id="attachment-body-content">
+                            <div class="mt-4">
+                                <label for="statusedit">Status</label>
+        
+                                <select name="statusedit" id="statusedit" class="form-control">
+                                    <option value="done" @if($eventHasMember['status'] == 'done') selected @endif>Done</option>
+                                    <option value="waiting" @if($eventHasMember['status'] == 'waiting') selected @endif>Waiting</option>
+                                </select>
+                            </div>
+        
+                            <div>
+                                <label for="payment_date" class="block">Payment Date</label>
+        
+                                <input type="date" name="payment_date" id="payment_date" class="form-control" placeholder="Payment Date" value="{{ $eventHasMember['payment_date'] }}">
+                            </div>
+                        <div class="modal-footer">
+                            <div class="flex items-center justify-end mt-4">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <div>
-        <div class="flex justify-end">
-            <div class="mr-2">
-                @include('event.modal.addmember')
-            </div>
-        </div>
-    <div>
 @endsection
-
-
-@push('scripts')
-    {{$dataTable->scripts()}}
-@endpush
 
 @push('styles')
     <style>
