@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
 
 class UserSeeder extends Seeder
 {
@@ -22,6 +23,8 @@ class UserSeeder extends Seeder
         $admin->username='admin';
         $admin->password=Hash::make('123456');
         $admin->save();
-        // $admin->assignRole('admin');
+
+        $permissons = Permission::where('guard_name','web')->get();
+        $admin->syncPermissions($permissons);
     }
 }

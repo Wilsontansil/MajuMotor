@@ -27,6 +27,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/event', [EventDataController::class, 'event'])->name('event');
     Route::post('/event/create', [EventDataController::class, 'eventCreate'])->name('event.create');
     Route::get('/event/detail/{id}', [EventDataHasMemberController::class, 'eventDetail'])->name('event.detail');
+    Route::post('/event/detail/addmember', [EventDataHasMemberController::class, 'eventDetailCreate'])->name('event.detail.create');
+    Route::get('/user', [DashboardController::class, 'user'])->name('user');
+    Route::post('/user/create', [DashboardController::class, 'userCreate'])->name('user.create');
+    Route::get('/user/edit/{id}', [DashboardController::class, 'userEdit'])->name('user.edit');
+    Route::post('/user/save', [DashboardController::class, 'userSave'])->name('user.save');
 });
 
 require __DIR__.'/auth.php';

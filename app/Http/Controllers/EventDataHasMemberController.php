@@ -7,13 +7,15 @@ use App\Models\EventData;
 use App\Models\Member;
 use App\Models\EventDataHasMember;
 use App\DataTables\EventDataHasMemberDataTable;
+use Spatie\Permission\Models\Permission;
 
 class EventDataHasMemberController extends Controller
 {
     public function eventDetail(EventDataHasMemberDataTable $dataTable, $id)
     {
         $page = 'event';
-        return $dataTable->render('event.detail', compact('page', 'id'));
+        $member = Member::all();
+        return $dataTable->render('event.detail', compact('page', 'id', 'member'));
     }
 
     public function eventDetailCreate(Request $request)
