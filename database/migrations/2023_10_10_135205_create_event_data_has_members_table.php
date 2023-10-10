@@ -19,6 +19,9 @@ return new class extends Migration
             $table->foreignId('member_id')->constrained('members');
             $table->string('status')->default('waiting');
             $table->dateTime('payment_date')->nullable();
+            $table->string('payment_method')->nullable();
+            $table->string('payment_proof')->nullable();
+            $table->decimal("nominal", $precision = 14, $scale = 3)->nullable();
             $table->string('note')->nullable();
             $table->timestamps();
         });
