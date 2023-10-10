@@ -73,7 +73,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-admin-gold-primary elevation-4">
+  <aside class="main-sidebar sidebar-admin sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
       {{-- <img src="{{ asset('img/logo.png') }}" alt="Logo" class="brand-image"> --}}
