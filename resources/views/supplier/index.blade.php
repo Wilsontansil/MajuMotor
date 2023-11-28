@@ -5,12 +5,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0">Member</h1>
+            <h1 class="m-0">Supplier</h1>
             </div>
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item active">Member</li>
+                <li class="breadcrumb-item active">Supplier</li>
             </ol>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <div class="pt-3 pl-4">
                     <div class="row">
                         @can('Add Member')
-                            <button class="btn btn-primary" onclick="addMember()">Add Member</button>
+                            <button class="btn btn-primary" onclick="addsupplier()">Add Supplier</button>
                         @endcan
                     </div>
                 </div>
@@ -39,7 +39,7 @@
     <div>
         <div class="flex justify-end">
             <div class="mr-2">
-                @include('member.modal.add')
+                @include('supplier.modal.add')
             </div>
         </div>
     <div>
@@ -48,6 +48,12 @@
 
 @push('scripts')
     {{$dataTable->scripts()}}
+
+    <script>
+        function editsupplier() {
+            $('#addsupplier-modal').modal('show');
+        }
+    </script>
 @endpush
 
 @push('styles')

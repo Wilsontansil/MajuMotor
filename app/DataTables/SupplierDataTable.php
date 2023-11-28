@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Member;
+use App\Models\Supplier;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class MemberDataTable extends DataTable
+class SupplierDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -23,17 +23,20 @@ class MemberDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'member.action')
+            ->addColumn('action', function ($data) {
+                $html = '<a href="' . route('supplier.edit', ['id' => $data->id]) . '" class="btn btn-sm btn-primary">Edit</a>';
+                return $html;
+            })
             ->setRowId('id');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Member $model
+     * @param \App\Models\Supplier $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Member $model): QueryBuilder
+    public function query(Supplier $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -46,7 +49,7 @@ class MemberDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('member-table')
+                    ->setTableId('supplier-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('frtip')
@@ -62,9 +65,10 @@ class MemberDataTable extends DataTable
     protected function getColumns(): array
     {
         return [
-            Column::make('username'),
+            Column::make('code'),
+            Column::make('name'),
             Column::make('phone'),
-            Column::make('email')
+            Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
                 ->width(120)
@@ -79,6 +83,6 @@ class MemberDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Member_' . date('YmdHis');
+        return 'Supplier_' . date('YmdHis');
     }
 }

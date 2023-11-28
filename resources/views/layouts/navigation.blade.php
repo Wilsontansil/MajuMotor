@@ -12,51 +12,30 @@
     @endif
 </li>
 
-@can('View Member')
 <li class="nav-item">
-    @if($page=='member')
-    <a href="{{ route('member') }}" class="nav-link active">
+    @if($page=='supplier')
+    <a href="{{ route('supplier') }}" class="nav-link active">
         <i class="fas fa-tachometer-alt nav-icon"></i>
-        <p>Member</p>
+        <p>Supplier</p>
     </a>
     @else
-    <a href="{{ route('member') }}" class="nav-link">
+    <a href="{{ route('supplier') }}" class="nav-link">
         <i class="fas fa-tachometer-alt nav-icon"></i>
-        <p>Member</p>
+        <p>Supplier</p>
     </a>
     @endif
 </li>
-@endcan
 
-@can('View Event')
 <li class="nav-item">
-    @if($page=='event')
-    <a href="{{ route('event') }}" class="nav-link active">
+    @if($page=='stockorder')
+    <a href="{{ route('stockorder') }}" class="nav-link active">
         <i class="fas fa-tachometer-alt nav-icon"></i>
-        <p>Event</p>
+        <p>Stock Order</p>
     </a>
     @else
-    <a href="{{ route('event') }}" class="nav-link">
+    <a href="{{ route('stockorder') }}" class="nav-link">
         <i class="fas fa-tachometer-alt nav-icon"></i>
-        <p>Event</p>
+        <p>Stock Order</p>
     </a>
     @endif
 </li>
-@endcan
-
-@can('View User')
-<li class="nav-item">
-    @if($page=='user')
-    <a href="{{ route('user') }}" class="nav-link active">
-        <i class="fas fa-tachometer-alt nav-icon"></i>
-        <p>User</p>
-    </a>
-    @else
-    <a href="{{ route('user') }}" class="nav-link">
-        <i class="fas fa-tachometer-alt nav-icon"></i>
-        <p>User</p>
-    </a>
-    @endif
-</li>
-@endcan
-
