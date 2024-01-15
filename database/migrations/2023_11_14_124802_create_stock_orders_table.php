@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string("name")->nullable();
             $table->string("operator")->nullable();
-            $table->string("store")->nullable();
             $table->string("supplier")->nullable();
+            $table->string("store")->nullable();
             $table->string("status")->default("new");
             $table->text("note")->nullable();
             $table->timestamps();

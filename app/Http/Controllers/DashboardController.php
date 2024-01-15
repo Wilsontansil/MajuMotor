@@ -29,6 +29,12 @@ class DashboardController extends Controller
         $user->kode = $request->kode;
         $user->name = $request->name;
         $user->username = $request->username;
+        $user->MM_Store_Code = $request->storeCode;
+        if($user->MM_Store_Code == 'MM') {
+            $user->MM_Store_Name = 'Maju Motor';
+        } else {
+            $user->MM_Store_Name = 'Maju Motor Oli';
+        }
         $user->password = \Hash::make($request->password);
         $user->save();
         alert()->success('User created successfully', 'Success');
@@ -50,13 +56,22 @@ class DashboardController extends Controller
                 }
             }
         }
-        return view('user.permission', compact('page', 'permissions', 'id'));
+        return view('user.permission', compact('page', 'permissions', 'id', 'user'));
     }
 
     public function userSave(Request $request) {
         $page = "user";
         $user = User::find($request->user_id);
         $user->syncPermissions($request->permission);
+
+        $user->name = $request->name;
+        $user->MM_Store_Code = $request->storeCode;
+        if($user->MM_Store_Code == 'MM') {
+            $user->MM_Store_Name = 'Maju Motor';
+        } else {
+            $user->MM_Store_Name = 'Maju Motor Oli';
+        }
+        $user->save();
         alert()->success('User permission saved successfully', 'Success');
         return redirect()->route('user');
     }

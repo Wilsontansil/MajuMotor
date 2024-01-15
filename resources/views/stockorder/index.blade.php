@@ -25,7 +25,7 @@
                 <div class="pt-3 pl-4">
                     <div class="row">
                         @can('Add Member')
-                            <button class="btn btn-primary" onclick="addsupplier()">Add Supplier</button>
+                            <button class="btn btn-primary" onclick="addstock()">Add Stock</button>
                         @endcan
                     </div>
                 </div>
@@ -39,7 +39,7 @@
     <div>
         <div class="flex justify-end">
             <div class="mr-2">
-                @include('supplier.modal.add')
+                @include('stockorder.modal.add')
             </div>
         </div>
     <div>

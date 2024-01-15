@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('kode');
             $table->string('username');
             $table->string('name');
+            $table->string('MM_Store_Code')->nullable();
+            $table->string('MM_Store_Name')->nullable();
             $table->string('password');
             $table->string('email')->nullable();
             $table->string('status')->default('active');

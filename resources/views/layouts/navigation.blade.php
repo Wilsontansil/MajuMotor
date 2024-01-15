@@ -13,6 +13,20 @@
 </li>
 
 <li class="nav-item">
+    @if($page=='user')
+    <a href="{{ route('user') }}" class="nav-link active">
+        <i class="fas fa-tachometer-alt nav-icon"></i>
+        <p>User</p>
+    </a>
+    @else
+    <a href="{{ route('user') }}" class="nav-link">
+        <i class="fas fa-tachometer-alt nav-icon"></i>
+        <p>User</p>
+    </a>
+    @endif
+</li>
+
+<li class="nav-item">
     @if($page=='supplier')
     <a href="{{ route('supplier') }}" class="nav-link active">
         <i class="fas fa-tachometer-alt nav-icon"></i>

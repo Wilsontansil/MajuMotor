@@ -65,6 +65,7 @@ class StockOrderDataTable extends DataTable
             Column::make('name'),
             Column::make('supplier'),
             Column::make('status'),
+            Column::make('store')->title('Toko'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

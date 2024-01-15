@@ -21,6 +21,8 @@ class UserSeeder extends Seeder
         $admin->kode = 'ADM';
         $admin->name='Admin';
         $admin->username='admin';
+        $admin->MM_Store_Code = 'MM';
+        $admin->MM_Store_Name = 'Maju Motor';
         $admin->password=Hash::make('123456');
         $admin->save();
 

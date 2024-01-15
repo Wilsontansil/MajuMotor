@@ -24,6 +24,44 @@
         <div class="col-md-12">
             <div class="content-dt">
                 <div class="w-max">
+                    <form method="POST" action="{{ route('user.save') }}">
+                        @csrf
+
+                    <div class="mt-4">
+                        <label for="kode">Kode</label>
+
+                        <input type="text" name="kode" id="kode" class="form-control" placeholder="Kode" value="{{ $user->kode }}" readonly>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="username">UserName</label>
+
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="{{ $user->username }}" readonly>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="name">Name</label>
+
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ $user->name }}">
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="storeCode" class="form-label">Store</label>
+
+                        <select name="storeCode" id="storeCode" class="form-control">
+                            <option value="MM" @if($user->MM_Store_Code == 'MM') selected @endif>MM - Maju Motor</option>
+                            <option value="MMOLI" @if($user->MM_Store_Code == 'MMOLI') selected @endif>MMOLI - Maju Motor Oli</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <div>   
+                            <label for="password" class="block">Password</label>
+
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                        </div>
+                    </div>
+
                     <!-- Permissions -->
                     <div class="mt-4">
                         <label for="Permission">Permission</label>
@@ -31,8 +69,6 @@
                     <div class="pl-lg-4">
                         <div class="row">
                             <div class="col-md-12">
-                                <form method="POST" action="{{ route('user.save') }}">
-                                    @csrf
                                     <input type="hidden" name="user_id" value="{{ $id }}">
                                     <div class="table-responsive">
                                         <table id="user-group-table" class="table">

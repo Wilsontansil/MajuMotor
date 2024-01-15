@@ -27,6 +27,15 @@
                         <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
                     </div>
 
+                    <div class="mt-4">
+                        <label for="storeCode" class="form-label">Store</label>
+
+                        <select name="storeCode" id="storeCode" class="form-control">
+                            <option value="MM">MM - Maju Motor</option>
+                            <option value="MMOLI">MMOLI - Maju Motor Oli</option>
+                        </select>
+                    </div>
+
                     <div>   
                         <label for="password" class="block">Password</label>
 
