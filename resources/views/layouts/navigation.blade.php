@@ -27,6 +27,20 @@
 </li>
 
 <li class="nav-item">
+    @if($page=='car')
+    <a href="{{ route('car') }}" class="nav-link active">
+        <i class="fas fa-tachometer-alt nav-icon"></i>
+        <p>Cars</p>
+    </a>
+    @else
+    <a href="{{ route('car') }}" class="nav-link">
+        <i class="fas fa-tachometer-alt nav-icon"></i>
+        <p>Cars</p>
+    </a>
+    @endif
+</li>
+
+<li class="nav-item">
     @if($page=='supplier')
     <a href="{{ route('supplier') }}" class="nav-link active">
         <i class="fas fa-tachometer-alt nav-icon"></i>
@@ -50,6 +64,20 @@
     <a href="{{ route('stockorder') }}" class="nav-link">
         <i class="fas fa-tachometer-alt nav-icon"></i>
         <p>Stock Order</p>
+    </a>
+    @endif
+</li>
+
+<li class="nav-item">
+    @if($page=='member')
+    <a href="{{ route('member') }}" class="nav-link active">
+        <i class="fas fa-tachometer-alt nav-icon"></i>
+        <p>Member</p>
+    </a>
+    @else
+    <a href="{{ route('member') }}" class="nav-link">
+        <i class="fas fa-tachometer-alt nav-icon"></i>
+        <p>Member</p>
     </a>
     @endif
 </li>

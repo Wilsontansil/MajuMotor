@@ -26,6 +26,7 @@ class StockOrderController extends Controller
         $stockorder->operator = $auth->name;
         $stockorder->supplier = $request->stockordersupplier;
         $stockorder->store = $auth->MM_Store_Code;
+        $stockorder->note = $request->stockordernote;
         $stockorder->save();
 
         alert()->success('StockOrder created successfully', 'Success');

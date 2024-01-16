@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 // use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\StockOrderController;
+use App\Http\Controllers\CarModelController;
+use App\Http\Controllers\MemberController;
 // use App\Http\Controllers\EventDataController;
 // use App\Http\Controllers\EventDataHasMemberController;
 
@@ -36,6 +38,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/stockorder', [StockOrderController::class, 'stockorder'])->name('stockorder');
     Route::post('/stockorder/create', [StockOrderController::class, 'stockorderCreate'])->name('stockorder.create');
+
+    Route::get('/car', [CarModelController::class, 'car'])->name('car');
+    Route::post('/car/create', [CarModelController::class, 'carCreate'])->name('car.create');
+
+    Route::get('/member', [MemberController::class, 'member'])->name('member');
 });
 
 require __DIR__.'/auth.php';

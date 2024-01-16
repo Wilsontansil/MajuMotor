@@ -19,10 +19,17 @@
                         <label for="stockordersupplier">Supplier</label>
 
                         <select name="stockordersupplier" id="stockordersupplier" class="form-control">
+                            <option value="none">none</option>
                             @foreach ($suppliers as $supplier)
                                 <option value="{{ $supplier->code }}">{{ $supplier->name }}</option>
                             @endforeach
                         </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="stockorderdate">Note</label>
+
+                        <textarea name="stockorderdate" id="stockorderdate" class="form-control" placeholder="Note" required></textarea>
                     </div>
 
                 </div>
