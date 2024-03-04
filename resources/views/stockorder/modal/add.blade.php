@@ -10,9 +10,15 @@
                 @csrf
                 <div class="modal-body" id="attachment-body-content">
                     <div class="mt-4">
-                        <label for="stockordername">Stock Name</label>
+                        <label for="stockordercode">Kode Stock</label>
 
-                        <input type="text" name="stockordername" id="stockordername" class="form-control" placeholder="Stock Order Name" required>
+                        <input type="text" name="stockordercode" id="stockordercode" class="form-control" placeholder="Kode Stock" required>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="stockordername">Nama Stock</label>
+
+                        <input type="text" name="stockordername" id="stockordername" class="form-control" placeholder="Nama Stock" required>
                     </div>
 
                     <div class="mt-4">

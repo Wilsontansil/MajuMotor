@@ -22,7 +22,8 @@ class StockOrderController extends Controller
         $auth = Auth::user();
         $page = 'stockorder';
         $stockorder = new StockOrder();
-        $stockorder->name = $request->stockordername;
+        $stockorder->stockcode = $request->stockordercode;
+        $stockorder->stockname = $request->stockordername;
         $stockorder->operator = $auth->name;
         $stockorder->supplier = $request->stockordersupplier;
         $stockorder->store = $auth->MM_Store_Code;

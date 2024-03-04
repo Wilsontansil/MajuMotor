@@ -32,36 +32,37 @@
                         <div class="modal-body" id="attachment-body-content">
                             <input type="hidden" name="supplierid" id="supplierid" value="{{ $supplier->id }}">
                             <div class="mt-4">
-                                <label for="suppliercode">Supplie Code</label>
+                                <label for="suppliercode">Kode Supplier</label>
         
-                                <input type="text" name="suppliercode" id="suppliercode" class="form-control" placeholder="Supplie Code" value="{{ $supplier->code }}" required>
-        
+                                <input type="text" name="suppliercode" id="suppliercode" class="form-control" placeholder="Kode Supplier" value="{{ $supplier->code }}" required>
+                            </div>
+                            
                             <div class="mt-4">
-                                <label for="suppliername">Supplie Name</label>
+                                <label for="suppliername">Nama Supplier</label>
         
                                 <input type="text" name="suppliername" id="suppliername" class="form-control" placeholder="Supplie Name" value="{{ $supplier->name }}" required>
                             </div>
         
                             <div class="mt-4">
-                                <label for="supplieraddress">Supplie Address</label>
+                                <label for="supplieraddress">Alamat Supplier</label>
         
-                                <input type="text" name="supplieraddress" id="supplieraddress" class="form-control" placeholder="Supplie Address" value="{{ $supplier->address }}">
+                                <input type="text" name="supplieraddress" id="supplieraddress" class="form-control" placeholder="Alamat Supplier" value="{{ $supplier->address }}">
                             </div>
         
                             <div class="mt-4">
-                                <label for="supplierphone">Supplie Phone</label>
+                                <label for="supplierphone">Nomor Telepon Supplier</label>
         
-                                <input type="text" name="supplierphone" id="supplierphone" class="form-control" placeholder="Supplie Phone" value="{{ $supplier->phone }}">
+                                <input type="text" name="supplierphone" id="supplierphone" class="form-control" placeholder="Nomor Telepon Supplier" value="{{ $supplier->phone }}">
                             </div>
         
                             <div class="mt-4">
-                                <label for="supplieremail">Supplie Email</label>
+                                <label for="supplieremail">Email Supplier</label>
         
-                                <input type="text" name="supplieremail" id="supplieremail" class="form-control" placeholder="Supplie Email" value="{{ $supplier->email }}">
+                                <input type="text" name="supplieremail" id="supplieremail" class="form-control" placeholder="Email Supplier" value="{{ $supplier->email }}">
                             </div>
         
                             <div class="mt-4">
-                                <label for="supplierbank" class="form-label">Supplie Bank</label>
+                                <label for="supplierbank" class="form-label">Bank Supplier</label>
         
                                 <select name="supplierbank" id="supplierbank" class="form-control">
                                     <option value="BCA" {{ $supplier->bank == 'BCA' ? 'selected' : '' }}>BCA</option>
@@ -72,20 +73,20 @@
                             </div>
         
                             <div class="mt-4">
-                                <label for="supplieraccountname">Supplie Account Name</label>
+                                <label for="supplieraccountname">Nama Bank Supplier</label>
         
-                                <input type="text" name="supplieraccountname" id="supplieraccountname" class="form-control" placeholder="Supplie Account Name" value="{{ $supplier->bank_name }}">
+                                <input type="text" name="supplieraccountname" id="Kode Supplier" class="form-control" placeholder="Nama Bank Supplier" value="{{ $supplier->bank_name }}">
                             </div>
         
                             <div class="mt-4">
-                                <label for="supplieraccount">Supplie Account</label>
+                                <label for="supplieraccount">Nomor Bank Supplier</label>
         
-                                <input type="text" name="supplieraccount" id="supplieraccount" class="form-control" placeholder="Supplie Account" value="{{ $supplier->bank_account }}">
+                                <input type="text" name="supplieraccount" id="supplieraccount" class="form-control" placeholder="Nomor Bank Supplier" value="{{ $supplier->bank_account }}">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <div class="flex items-center justify-end mt-4">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
                     </form>

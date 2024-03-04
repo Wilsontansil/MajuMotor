@@ -62,7 +62,8 @@ class StockOrderDataTable extends DataTable
     protected function getColumns(): array
     {
         return [
-            Column::make('name'),
+            Column::make('stockcode'),
+            Column::make('stockname'),
             Column::make('supplier'),
             Column::make('status'),
             Column::make('store')->title('Toko'),

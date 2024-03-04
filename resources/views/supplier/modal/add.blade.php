@@ -10,37 +10,37 @@
                 @csrf
                 <div class="modal-body" id="attachment-body-content">
                     <div class="mt-4">
-                        <label for="suppliercode">Supplie Code</label>
+                        <label for="suppliercode">Kode Supplier</label>
 
-                        <input type="text" name="suppliercode" id="suppliercode" class="form-control" placeholder="Supplie Code" required>
+                        <input type="text" name="suppliercode" id="suppliercode" class="form-control" placeholder="Kode Supplier" required>
                     </div>
 
                     <div class="mt-4">
-                        <label for="suppliername">Supplie Name</label>
+                        <label for="suppliername">Nama Supplier</label>
 
-                        <input type="text" name="suppliername" id="suppliername" class="form-control" placeholder="Supplie Name" required>
+                        <input type="text" name="suppliername" id="suppliername" class="form-control" placeholder="Nama Supplier" required>
                     </div>
 
                     <div class="mt-4">
-                        <label for="supplieraddress">Supplie Address</label>
+                        <label for="supplieraddress">Alamat Supplier</label>
 
-                        <input type="text" name="supplieraddress" id="supplieraddress" class="form-control" placeholder="Supplie Address">
+                        <input type="text" name="supplieraddress" id="supplieraddress" class="form-control" placeholder="Alamat Supplier">
                     </div>
 
                     <div class="mt-4">
-                        <label for="supplierphone">Supplie Phone</label>
+                        <label for="supplierphone">Nomor Telepon Supplier</label>
 
-                        <input type="text" name="supplierphone" id="supplierphone" class="form-control" placeholder="Supplie Phone">
+                        <input type="text" name="supplierphone" id="supplierphone" class="form-control" placeholder="Nomor Telepon Supplier">
                     </div>
 
                     <div class="mt-4">
-                        <label for="supplieremail">Supplie Email</label>
+                        <label for="supplieremail">Email Supplier</label>
 
-                        <input type="text" name="supplieremail" id="supplieremail" class="form-control" placeholder="Supplie Email">
+                        <input type="text" name="supplieremail" id="supplieremail" class="form-control" placeholder="Email Supplier">
                     </div>
 
                     <div class="mt-4">
-                        <label for="supplierbank" class="form-label">Supplie Bank</label>
+                        <label for="supplierbank" class="form-label">Bank Supplier</label>
 
                         <select name="supplierbank" id="supplierbank" class="form-control">
                             <option value="BCA">BCA</option>
@@ -51,15 +51,15 @@
                     </div>
 
                     <div class="mt-4">
-                        <label for="supplieraccountname">Supplie Account Name</label>
+                        <label for="supplieraccountname">Nama Bank Supplier</label>
 
-                        <input type="text" name="supplieraccountname" id="supplieraccountname" class="form-control" placeholder="Supplie Account Name">
+                        <input type="text" name="supplieraccountname" id="supplieraccountname" class="form-control" placeholder="Nama Bank Supplier">
                     </div>
 
                     <div class="mt-4">
-                        <label for="supplieraccount">Supplie Account</label>
+                        <label for="supplieraccount">Nomor Bank Supplier</label>
 
-                        <input type="text" name="supplieraccount" id="supplieraccount" class="form-control" placeholder="Supplie Account">
+                        <input type="text" name="supplieraccount" id="supplieraccount" class="form-control" placeholder="Nomor Bank Supplier">
                     </div>
                 </div>
                 <div class="modal-footer">
